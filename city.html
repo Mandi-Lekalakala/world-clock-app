@@ -9,14 +9,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="app-container">
+    <div class="app-container city-container">
       <!-- ==HEADER== -->
 
       <header class="header">
         <div class="app-logo">
-          <h1>World Clock</h1>
+          <h1><i class="fa-solid fa-moon logo-icon"></i>World Clock</h1>
         </div>
         <button class="theme-toggle">Light Mode</button>
       </header>
@@ -25,7 +31,7 @@
 
       <section class="hero-section">
         <div class="local-city-name">
-          <h2 id="city-name ">Paris · CET</h2>
+          <h2 id="city-name">Paris · CET</h2>
         </div>
         <div class="local-hero-time">
           <span id="city-time">15:35:21</span>
@@ -40,12 +46,12 @@
 
       <!-- ==BACK BUTTON== -->
 
-      <a href="index.html" class="back-btn">← Back to Home</a>
+      <a href="homepage.html" class="back-btn">← Back to Home</a>
     </div>
 
     <!-- ==FOOTER== -->
 
-    <footer class="footer">
+    <footer class="city-footer">
       <p>&copy; 2026 World Clock App. All rights reserved.</p>
       <div class="footer-links">
         <a
