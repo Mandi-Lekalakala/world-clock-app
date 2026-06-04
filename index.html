@@ -15,6 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
   <body>
     <div class="app-container">
@@ -49,34 +51,46 @@
       <section class="city-clock-grid">
         <!-- Clock Card 1 -->
 
-        <article class="city-clock-card" data-zone="Europe/London">
+        <article class="city-clock-card" data-zone="Europe/London" id="london">
           <h3>London · BST</h3>
-          <div class="city-card-time">13:41</div>
-          <p>GMT +1</p>
+          <div class="city-card-time"></div>
+          <p></p>
         </article>
 
         <!-- Clock Card 2 -->
 
-        <article class="city-clock-card" data-zone="America/New_York">
+        <article
+          class="city-clock-card"
+          data-zone="America/New_York"
+          id="new-york"
+        >
           <h3>New York · EST</h3>
-          <div class="city-card-time">08:41</div>
-          <p>GMT -4</p>
+          <div class="city-card-time"></div>
+          <p></p>
         </article>
 
         <!-- Clock Card 3 -->
 
-        <article class="city-clock-card" data-zone="Australia/Sydney">
+        <article
+          class="city-clock-card"
+          data-zone="Australia/Sydney"
+          id="sydney"
+        >
           <h3>Sydney · AEST</h3>
-          <div class="city-card-time">23:41</div>
-          <p>GMT +10</p>
+          <div class="city-card-time"></div>
+          <p></p>
         </article>
 
         <!-- Clock Card 4 -->
 
-        <article class="city-clock-card" data-zone="America/Mexico_City">
-          <h3>Mexico City · CST</h3>
-          <div class="city-card-time">12:29</div>
-          <p>GMT -6</p>
+        <article
+          class="city-clock-card"
+          data-zone="Africa/Johannesburg"
+          id="cape-town"
+        >
+          <h3>Cape Town · SAST</h3>
+          <div class="city-card-time"></div>
+          <p></p>
         </article>
       </section>
 
