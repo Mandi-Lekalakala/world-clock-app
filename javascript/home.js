@@ -27,7 +27,7 @@ function handleGeolocation(position) {
       return response.json();
     })
     .then(function (data) {
-      let cityName = data.city || data.locality;
+      let cityName = data.city || data.locality || "city" || "locality";
       updateUserCity(cityName);
     });
 }
@@ -37,6 +37,8 @@ navigator.geolocation.getCurrentPosition(handleGeolocation);
 //===FEATURED CITY TIMES===//
 
 function updateAllCards() {
+  const cityCards = document.querySelectorAll(".city-clock-card");
+
   cityCards.forEach(function (card) {
     const zone = card.dataset.zone;
 
@@ -53,9 +55,12 @@ function updateAllCards() {
     const abbr = moment().tz(zone).format("z");
     nameDisplay.innerHTML = `${cityName} · ${abbr}`;
   });
+
+  setInterval(function () {
+    updateAllCards();
+  }, 1000);
 }
 
-const cityCards = document.querySelectorAll(".city-clock-card");
-
 updateAllCards();
-setInterval(updateAllCards, 1000);
+
+setInterval(updateUserCity, 1000);
