@@ -46,7 +46,12 @@ function updateAllCards() {
 
     const offsetDisplay = card.querySelector("#city-gmt");
     const offset = moment().tz(zone).format("Z");
-    offsetDisplay.innerHTML = "GMT " + offset;
+    offsetDisplay.innerHTML = `GMT ${offset}`;
+
+    const nameDisplay = card.querySelector("#city-card-name");
+    const cityName = zone.split("/")[1].replace("_", " ");
+    const abbr = moment().tz(zone).format("z");
+    nameDisplay.innerHTML = `${cityName} · ${abbr}`;
   });
 }
 
