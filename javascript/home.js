@@ -1,24 +1,28 @@
 // ===USER'S LOCAL TIME===//
 
-function updateUserCity(cityName) {
-  let userCityName = document.getElementById("user-city");
-  let userTime = document.getElementById("user-time");
-  let userDate = document.getElementById("user-date");
-  let now = moment();
-  let abbr = moment.tz(moment.tz.guess()).format("z");
-
-  userCityName.innerHTML = `${cityName} · ${abbr}`;
+function tickClock() {
+  const userTime = document.getElementById("user-time");
+  const userDate = document.getElementById("user-date");
+  const now = moment();
   userTime.innerHTML = now.format("HH:mm:ss");
   userDate.innerHTML = now.format("dddd, D MMMM YYYY");
 
   setInterval(function () {
-    updateUserCity(cityName);
+    tickClock();
   }, 1000);
 }
 
+function updateUserCity(cityName) {
+  const userCityName = document.getElementById("user-city");
+
+  const abbr = moment.tz(moment.tz.guess()).format("z");
+
+  userCityName.innerHTML = `${cityName} · ${abbr}`;
+}
+
 function handleGeolocation(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
 
   fetch(
     `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`,
@@ -27,7 +31,7 @@ function handleGeolocation(position) {
       return response.json();
     })
     .then(function (data) {
-      let cityName = data.city || data.locality || "city" || "locality";
+      const cityName = data.city || data.locality;
       updateUserCity(cityName);
     });
 }
@@ -62,5 +66,4 @@ function updateAllCards() {
 }
 
 updateAllCards();
-
-setInterval(updateUserCity, 1000);
+tickClock();
