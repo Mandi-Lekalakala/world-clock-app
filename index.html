@@ -85,14 +85,15 @@
       <!-- TIMEZONE SELECTOR -->
 
       <section class="timezone">
-        <select id="timezone-dropdown">
-          <option value="">+ Add a city or timezone...</option>
-          <option value="Europe/Paris">Paris</option>
-          <option value="Europe/Berlin">Berlin</option>
-          <option value="America/Toronto">Toronto</option>
-          <option value="Asia/Singapore">Singapore</option>
-          <option value="Africa/Accra">Accra</option>
-        </select>
+        <div class="search-container">
+          <input
+            class="search-input"
+            type="text"
+            id="timezone-search"
+            placeholder="Search for a city or timezone..."
+          />
+          <ul class="search-results"></ul>
+        </div>
       </section>
     </div>
 
