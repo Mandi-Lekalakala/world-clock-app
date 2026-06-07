@@ -30,6 +30,7 @@ A world clock web app that detects your location and displays live city clocks f
 - BigDataCloud Reverse Geocoding API
 - Font Awesome
 - Google Fonts (Space Mono + Syne)
+- cities.json
 
 ## Author
 
