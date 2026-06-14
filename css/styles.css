@@ -210,7 +210,7 @@ HOMEPAGE CSS STYLING
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  color: #3b82f6;
+  color: #111827;
   font-family: "Syne", sans-serif;
   font-size: 15px;
   outline: none;
@@ -218,6 +218,29 @@ HOMEPAGE CSS STYLING
 
 .search-input:focus {
   border-color: #3b82f6;
+}
+
+.search-btn {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  background: #faf9ff;
+  color: #111827;
+  border: 1px solid #111827;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: "Syne", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .search-results {
