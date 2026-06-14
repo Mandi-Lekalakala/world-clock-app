@@ -38,7 +38,14 @@ function handleGeolocation(position) {
 
 navigator.geolocation.getCurrentPosition(handleGeolocation);
 
-//===FEATURED CITY TIMES===//
+//===FEATURED CITY TIME CARDS===//
+
+function addRemoveButton(card) {
+  const removeBtn = card.querySelector(".remove-card-btn");
+  removeBtn.addEventListener("click", function () {
+    card.remove();
+  });
+}
 
 function updateAllCards() {
   const cityCards = document.querySelectorAll(".city-clock-card");
@@ -58,6 +65,8 @@ function updateAllCards() {
     const cityName = zone.split("/")[1].replace("_", " ");
     const abbr = moment().tz(zone).format("z");
     nameDisplay.innerHTML = `${cityName} · ${abbr}`;
+
+    addRemoveButton(card);
   });
 
   setInterval(function () {
