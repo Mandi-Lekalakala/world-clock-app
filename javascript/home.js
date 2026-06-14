@@ -46,15 +46,15 @@ function updateAllCards() {
   cityCards.forEach(function (card) {
     const zone = card.dataset.zone;
 
-    const timeDisplay = card.querySelector("#city-card-time");
+    const timeDisplay = card.querySelector(".city-card-time");
     const time = moment().tz(zone).format("HH:mm:ss");
     timeDisplay.innerHTML = time;
 
-    const offsetDisplay = card.querySelector("#city-gmt");
+    const offsetDisplay = card.querySelector(".city-gmt");
     const offset = moment().tz(zone).format("Z");
     offsetDisplay.innerHTML = `GMT ${offset}`;
 
-    const nameDisplay = card.querySelector("#city-card-name");
+    const nameDisplay = card.querySelector(".city-card-name");
     const cityName = zone.split("/")[1].replace("_", " ");
     const abbr = moment().tz(zone).format("z");
     nameDisplay.innerHTML = `${cityName} · ${abbr}`;
