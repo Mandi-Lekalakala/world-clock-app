@@ -79,6 +79,8 @@ tickClock();
 
 // ===SEARCH CITY FUNCTIONALITY===//
 
+let allCities = [];
+
 function loadCities() {
   fetch("cities.json")
     .then(function (resonse) {
@@ -89,7 +91,20 @@ function loadCities() {
     });
 }
 
-let allCities = [];
+function handleSearchInput(event) {
+  const query = searchInput.value.trim().toLowerCase();
 
-let searchInput = document.getElementById("timezone-search");
-let searchButton = document.querySelector(".search-results");
+  searchResults.innerHTML = "";
+  if (query.length < 2) {
+    searchResults.style.display = "none";
+    return;
+  }
+
+  const matches = filterCities();
+  showResults(matches, searchInput, searchResults);
+}
+
+const searchInput = document.getElementById("timezone-search");
+const searchResults = document.querySelector(".search-results");
+
+searchInput.addEventListener("input", handleSearchInput);
