@@ -78,12 +78,12 @@ updateAllCards();
 tickClock();
 
 // ===SEARCH CITY FUNCTIONALITY===//
-
+// fetches info from cities.json and puts it into an ARRAY  //
 let allCities = [];
 
 function loadCities() {
   fetch("cities.json")
-    .then(function (resonse) {
+    .then(function (response) {
       return response.json();
     })
     .then(function (data) {
@@ -91,20 +91,53 @@ function loadCities() {
     });
 }
 
-function handleSearchInput(event) {
+function fetchTimezoneAndAddCard() {}
+
+function showResults(matches) {
+  if (matches.length > 0) {
+    searchResults.style.display = "block";
+    matches.forEach(function (city) {
+      const li = document.createElement("li");
+      li.innerHTML = `${city.name} · <span style="color:#666666; font-size:12px">${city.country}</span>`;
+
+      li.addEventListener("click", function () {
+        searchResults.style.display = "none";
+        searchInput.value = "";
+        fetchTimezoneAndAddCard(city);
+      });
+      searchResults.appendChild(li);
+    });
+  } else {
+    searchResults.style.display = "none";
+  }
+}
+
+function filterCities(query) {
+  const matches = allCities
+    .filter(function (city) {
+      return city.name.toLowerCase().includes(query);
+    })
+    .slice(0, 10);
+
+  showResults(matches);
+}
+
+function handleSearchInput() {
   const query = searchInput.value.trim().toLowerCase();
 
   searchResults.innerHTML = "";
+
   if (query.length < 2) {
     searchResults.style.display = "none";
     return;
   }
 
-  const matches = filterCities();
-  showResults(matches, searchInput, searchResults);
+  filterCities(query);
 }
 
 const searchInput = document.getElementById("timezone-search");
 const searchResults = document.querySelector(".search-results");
 
 searchInput.addEventListener("input", handleSearchInput);
+
+loadCities();
