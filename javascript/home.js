@@ -76,3 +76,20 @@ function updateAllCards() {
 
 updateAllCards();
 tickClock();
+
+// ===SEARCH CITY FUNCTIONALITY===//
+
+function loadCities() {
+  fetch("cities.json")
+    .then(function (resonse) {
+      return response.json();
+    })
+    .then(function (data) {
+      allCities = data;
+    });
+}
+
+let allCities = [];
+
+let searchInput = document.getElementById("timezone-search");
+let searchButton = document.querySelector(".search-results");
