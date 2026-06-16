@@ -91,7 +91,44 @@ function loadCities() {
     });
 }
 
-function fetchTimezoneAndAddCard() {}
+function addCityCard(cityName, timezone) {
+  const cityGrid = document.querySelector(".city-clock-grid");
+
+  const time = moment().tz(timezone).format("HH:mm:ss");
+  const offset = moment().tz(timezone).format("Z");
+  const abbr = moment().tz(timezone).format("z");
+
+  const card = document.createElement("article");
+  card.classList.add("city-clock-card");
+  card.dataset.zone = timezone;
+
+  card.innerHTML = `
+  <button class="remove-card-btn">✕</button>
+  <h3 class="city-card-name">${cityName} · ${abbr}</h3>
+  <div class="city-card-time">${time}</div>
+  <p class="city-gmt">GMT ${offset}</p>`;
+
+  addRemoveButton(card);
+  cityGrid.appendChild(card);
+}
+
+function fetchTimezoneAndAddCard(city) {
+  const lat = city.lat;
+  const lng = city.lng;
+  const apiKey = "FY092UK9VYQX";
+
+  fetch(
+    `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lng}`,
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const timezone = data.zoneName;
+      const cityName = city.name;
+      addCityCard(cityName, timezone);
+    });
+}
 
 function showResults(matches) {
   if (matches.length > 0) {
