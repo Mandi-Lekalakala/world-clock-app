@@ -114,7 +114,7 @@ function addCityCard(cityName, timezone) {
 
 function fetchTimezoneAndAddCard(city) {
   const lat = city.lat;
-  const lng = city.lng;
+  const lng = city.lon;
   const apiKey = "FY092UK9VYQX";
 
   fetch(
