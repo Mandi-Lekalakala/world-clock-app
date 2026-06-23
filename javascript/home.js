@@ -37,6 +37,7 @@ function handleGeolocation(position) {
 }
 
 navigator.geolocation.getCurrentPosition(handleGeolocation);
+tickClock();
 
 //===FEATURED CITY TIME CARDS===//
 
@@ -75,7 +76,6 @@ function updateAllCards() {
 }
 
 updateAllCards();
-tickClock();
 
 // ===SEARCH CITY FUNCTIONALITY===//
 // fetches info from cities.json and puts it into an ARRAY  //
@@ -178,3 +178,32 @@ const searchResults = document.querySelector(".search-results");
 searchInput.addEventListener("input", handleSearchInput);
 
 loadCities();
+
+//===DARK / LIGHT MODE TOGGLE===//
+
+function loadSavedTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  applyTheme(savedTheme);
+}
+
+function applyTheme(theme) {
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "Light Mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggle.textContent = "Dark Mode";
+  }
+}
+
+function handleThemeToggle() {
+  const isDark = document.body.classList.contains("dark-mode");
+  const newTheme = isDark ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+  applyTheme(newTheme);
+}
+
+const themeToggle = document.querySelector(".theme-toggle");
+themeToggle.addEventListener("click", handleThemeToggle);
+
+loadSavedTheme();
