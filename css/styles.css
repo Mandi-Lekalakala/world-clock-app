@@ -5,16 +5,41 @@
   padding: 0;
 }
 
+/* ==THEME VARIABLES== */
+:root {
+  --bg-page: #f5f5f7;
+  --bg-container: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hero: #faf9ff;
+  --bg-toggle: #faf9ff;
+  --border-color: #e0e0e0;
+  --text-primary: #111827;
+  --text-muted: #aaaaaa;
+  --accent: #3b82f6;
+  --search-bg: #ffffff;
+  --result-hover-bg: #f0f7ff;
+}
+
+body.dark-mode {
+  --bg-page: #0f1117;
+  --bg-container: #1a1d27;
+  --bg-card: #1e2130;
+  --bg-hero: #1e2130;
+  --bg-toggle: #1e2130;
+  --border-color: #2e3245;
+  --text-primary: #e5e7eb;
+  --text-muted: #6b7280;
+  --accent: #60a5fa;
+  --search-bg: #1e2130;
+  --result-hover-bg: #252840;
+}
+
 /* ==BASE== */
 body {
-  background-color: #f5f5f7;
+  background-color: var(--bg-page);
   font-family: "Syne", sans-serif;
   min-height: 100vh;
 }
-
-/* ============================
-HOMEPAGE CSS STYLING
-=============================== */
 
 /* ==APP CONTAINER== */
 .app-container {
@@ -22,9 +47,9 @@ HOMEPAGE CSS STYLING
   margin: 35px auto;
   padding: 25px;
   padding-bottom: 50px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: var(--bg-container);
 }
 
 /* ==HEADER== */
@@ -47,14 +72,14 @@ HOMEPAGE CSS STYLING
   letter-spacing: 0.15em;
   line-height: 1;
   text-transform: uppercase;
-  color: #111827;
+  color: var(--text-primary);
 }
 
 /* ==THEME TOGGLE BUTTON== */
 .theme-toggle {
-  background: #faf9ff;
-  color: #3b82f6;
-  border: 1px solid #3b82f6;
+  background: var(--bg-toggle);
+  color: var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
@@ -67,8 +92,8 @@ HOMEPAGE CSS STYLING
 
 /* ==HERO SECTION== */
 .hero-section {
-  background: #faf9ff;
-  border: 2px solid #e0e0e0;
+  background: var(--bg-hero);
+  border: 2px solid var(--border-color);
   border-radius: 10px;
   padding: 16px 18px;
   margin-bottom: 12px;
@@ -77,7 +102,7 @@ HOMEPAGE CSS STYLING
 }
 
 .hero-section:hover {
-  border-color: #3b82f6;
+  border-color: var(--accent);
 }
 
 /* ==HERO CITY NAME== */
@@ -86,7 +111,7 @@ HOMEPAGE CSS STYLING
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: var(--accent);
   margin-bottom: 4px;
 }
 
@@ -95,7 +120,7 @@ HOMEPAGE CSS STYLING
   font-family: "Space Mono", monospace;
   font-size: 52px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   letter-spacing: -1px;
   line-height: 1;
 }
@@ -104,7 +129,7 @@ HOMEPAGE CSS STYLING
 .local-hero-date span {
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #aaaaaa;
+  color: var(--text-muted);
   margin-top: 5px;
   display: block;
 }
@@ -112,8 +137,9 @@ HOMEPAGE CSS STYLING
 /* ==HERO BADGE== */
 .local-hero-badge span {
   display: inline-block;
-  background: #ede9fe;
-  color: #93c5fd;
+  background: var(--bg-toggle);
+  color: var(--accent);
+  border: 1px solid var(--accent);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -133,8 +159,8 @@ HOMEPAGE CSS STYLING
 
 /* ==CITY CARD== */
 .city-clock-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 16px 18px;
   transition: border-color 0.3s ease;
@@ -142,7 +168,7 @@ HOMEPAGE CSS STYLING
 }
 
 .city-clock-card:hover {
-  border-color: #3b82f6;
+  border-color: var(--accent);
 }
 
 /* ==CITY CARD NAME== */
@@ -151,7 +177,7 @@ HOMEPAGE CSS STYLING
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
@@ -160,7 +186,7 @@ HOMEPAGE CSS STYLING
   font-family: "Space Mono", monospace;
   font-size: 28px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   letter-spacing: -1px;
   line-height: 1;
 }
@@ -169,12 +195,11 @@ HOMEPAGE CSS STYLING
 .city-clock-card p {
   font-family: "Space Mono", monospace;
   font-size: 13px;
-  color: #aaaaaa;
+  color: var(--text-muted);
   margin-top: 6px;
 }
 
 /* ==REMOVE CARD BUTTON== */
-
 .remove-card-btn {
   position: absolute;
   top: 10px;
@@ -182,14 +207,14 @@ HOMEPAGE CSS STYLING
   background: none;
   border: none;
   cursor: pointer;
-  color: #111827;
+  color: var(--text-primary);
   font-size: 13px;
   padding: 0;
   line-height: 1;
 }
 
 .remove-card-btn:hover {
-  color: #3b82f6;
+  color: var(--accent);
 }
 
 /* ==TIMEZONE SELECTOR== */
@@ -207,17 +232,17 @@ HOMEPAGE CSS STYLING
   display: block;
   width: 100%;
   padding: 15px 14px;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--search-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: #111827;
+  color: var(--text-primary);
   font-family: "Syne", sans-serif;
   font-size: 15px;
   outline: none;
 }
 
 .search-input:focus {
-  border-color: #3b82f6;
+  border-color: var(--accent);
 }
 
 .search-results {
@@ -225,8 +250,8 @@ HOMEPAGE CSS STYLING
   top: 100%;
   left: 0;
   width: 100%;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--search-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   list-style: none;
   max-height: 200px;
@@ -238,14 +263,14 @@ HOMEPAGE CSS STYLING
 .search-results li {
   padding: 10px 14px;
   font-size: 13px;
-  color: #111827;
+  color: var(--text-primary);
   cursor: pointer;
   font-family: "Syne", sans-serif;
 }
 
 .search-results li:hover {
-  background: #f0f7ff;
-  color: #3b82f6;
+  background: var(--result-hover-bg);
+  color: var(--accent);
 }
 
 /* ==FOOTER== */
@@ -255,14 +280,14 @@ HOMEPAGE CSS STYLING
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-color);
   margin-top: auto;
 }
 
 /* ==FOOTER TEXT== */
 .footer p {
   font-size: 15px;
-  color: #111827;
+  color: var(--text-primary);
 }
 
 /* ==FOOTER ICONS== */
@@ -273,10 +298,10 @@ HOMEPAGE CSS STYLING
 
 .footer-links a {
   font-size: 20px;
-  color: #111827;
+  color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #3b82f6;
+  color: var(--accent);
 }
