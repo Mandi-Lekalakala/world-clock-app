@@ -305,3 +305,46 @@ body {
 .footer-links a:hover {
   color: var(--accent);
 }
+
+/* ==MOBILE RESPONSIVE== */
+@media (max-width: 768px) {
+  /* ==APP CONTAINER== */
+  .app-container {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 16px;
+    padding-bottom: 40px;
+  }
+
+  /* ==HEADER== */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ==HERO TIME== */
+  .local-hero-time span {
+    font-size: 36px;
+  }
+
+  /* ==CITY CARDS GRID== */
+  .city-clock-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ==CITY CARD TIME== */
+  .city-card-time {
+    font-size: 22px;
+  }
+
+  /* ==FOOTER== */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+}
