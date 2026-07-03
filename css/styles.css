@@ -308,6 +308,7 @@ body {
 
 /* ==MOBILE RESPONSIVE== */
 @media (max-width: 768px) {
+  /* ==APP CONTAINER== */
   .app-container {
     margin: 0;
     border-radius: 0;
@@ -317,28 +318,43 @@ body {
     padding-bottom: 40px;
   }
 
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  /* ==LOGO== */
+  .app-logo h1 {
+    font-size: 12px;
   }
 
+  .app-logo .logo-icon {
+    font-size: 20px;
+  }
+
+  /* ==THEME TOGGLE BUTTON== */
+  .theme-toggle {
+    font-size: 9px;
+    padding: 6px 10px;
+  }
+
+  /* ==HERO TIME== */
   .local-hero-time span {
     font-size: 36px;
   }
 
+  /* ==CITY CARDS GRID== */
   .city-clock-grid {
     grid-template-columns: 1fr;
   }
 
+  /* ==CITY CARD TIME== */
   .city-card-time {
     font-size: 22px;
   }
 
+  /* ==FOOTER== */
   .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
     padding: 16px;
+  }
+
+  /* ==FOOTER TEXT== */
+  .footer p {
+    font-size: 12px;
   }
 }
