@@ -78,7 +78,7 @@ function updateAllCards() {
 updateAllCards();
 
 // ===SEARCH CITY FUNCTIONALITY===//
-// fetches info from cities.json and puts it into an ARRAY  //
+
 let allCities = [];
 
 function loadCities() {
