@@ -2,7 +2,7 @@
 
 > 🚧 **Currently in development** — this project is actively being built as part of my front-end portfolio.
 
-![World Clock App Screenshot](./assets/homepage.png)
+![World Clock App Screenshot](./assets/world-clock-app.png)
 
 ## About
 
