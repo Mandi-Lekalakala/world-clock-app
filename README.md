@@ -1,6 +1,6 @@
-# 🌍 World Clock App
+#🌍 World Clock App
 
-> 🚧 **Currently in development** — this project is actively being built as part of my front-end portfolio.
+A world clock web app that detects your location and displays live city clocks from around the world. Built with vanilla HTML, CSS and JavaScript — no frameworks.
 
 ![World Clock App Screenshot](./assets/world-clock-app.png)
 
@@ -14,12 +14,11 @@ A world clock web app that detects your location and displays live city clocks f
 
 ## Features (so far)
 
-- ✅ Detects user's location and displays local city, timezone and live time
-- ✅ Featured city clocks that tick live in real time
-- ✅ City search powered by a world cities database
-- 🔄 Add and remove city cards from the homepage
-- 🔄 Dark mode toggle
-- 🔄 Fully responsive design
+✅ Detects user's location and displays local city, timezone and live time
+✅ Featured city clocks that tick live in real time
+✅ City search powered by a world cities database of 500,000+ cities
+✅ Add and remove city cards dynamically
+✅ Dark and light mode toggle with localStorage persistence
 
 ## Built With
 
@@ -27,7 +26,7 @@ A world clock web app that detects your location and displays live city clocks f
 - CSS3
 - Vanilla JavaScript
 - Moment.js + Moment Timezone
-- BigDataCloud Reverse Geocoding API
+- TimeZoneDB API
 - Font Awesome
 - Google Fonts (Space Mono + Syne)
 - cities.json
