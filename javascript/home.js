@@ -6,10 +6,6 @@ function tickClock() {
   const now = moment();
   userTime.innerHTML = now.format("HH:mm:ss");
   userDate.innerHTML = now.format("dddd, D MMMM YYYY");
-
-  setInterval(function () {
-    tickClock();
-  }, 1000);
 }
 
 function updateUserCity(cityName) {
@@ -37,6 +33,8 @@ function handleGeolocation(position) {
 }
 
 navigator.geolocation.getCurrentPosition(handleGeolocation);
+
+setInterval(tickClock, 1000);
 tickClock();
 
 //===FEATURED CITY TIME CARDS===//
@@ -69,12 +67,8 @@ function updateAllCards() {
 
     addRemoveButton(card);
   });
-
-  setInterval(function () {
-    updateAllCards();
-  }, 1000);
 }
-
+setInterval(updateAllCards, 1000);
 updateAllCards();
 
 // ===SEARCH CITY FUNCTIONALITY===//
