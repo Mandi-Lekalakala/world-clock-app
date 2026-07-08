@@ -1,5 +1,3 @@
-// ===USER'S LOCAL TIME===//
-
 function tickClock() {
   const userTime = document.getElementById("user-time");
   const userDate = document.getElementById("user-date");
@@ -37,8 +35,6 @@ navigator.geolocation.getCurrentPosition(handleGeolocation);
 setInterval(tickClock, 1000);
 tickClock();
 
-//===FEATURED CITY TIME CARDS===//
-
 function addRemoveButton(card) {
   const removeBtn = card.querySelector(".remove-card-btn");
   removeBtn.addEventListener("click", function () {
@@ -70,8 +66,6 @@ function updateAllCards() {
 }
 setInterval(updateAllCards, 1000);
 updateAllCards();
-
-// ===SEARCH CITY FUNCTIONALITY===//
 
 let allCities = [];
 
@@ -172,8 +166,6 @@ const searchResults = document.querySelector(".search-results");
 searchInput.addEventListener("input", handleSearchInput);
 
 loadCities();
-
-//===DARK / LIGHT MODE TOGGLE===//
 
 function loadSavedTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";

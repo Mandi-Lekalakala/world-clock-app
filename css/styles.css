@@ -1,11 +1,9 @@
-/* ==RESET== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ==THEME VARIABLES== */
 :root {
   --bg-page: #f5f5f7;
   --bg-container: #ffffff;
@@ -34,14 +32,12 @@ body.dark-mode {
   --result-hover-bg: #252840;
 }
 
-/* ==BASE== */
 body {
   background-color: var(--bg-page);
   font-family: "Syne", sans-serif;
   min-height: 100vh;
 }
 
-/* ==APP CONTAINER== */
 .app-container {
   max-width: 1200px;
   margin: 35px auto;
@@ -52,7 +48,6 @@ body {
   background-color: var(--bg-container);
 }
 
-/* ==HEADER== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,7 +55,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* ==LOGO== */
 .app-logo .logo-icon {
   font-size: 28px;
   vertical-align: middle;
@@ -75,7 +69,6 @@ body {
   color: var(--text-primary);
 }
 
-/* ==THEME TOGGLE BUTTON== */
 .theme-toggle {
   background: var(--bg-toggle);
   color: var(--accent);
@@ -90,7 +83,6 @@ body {
   text-transform: uppercase;
 }
 
-/* ==HERO SECTION== */
 .hero-section {
   background: var(--bg-hero);
   border: 2px solid var(--border-color);
@@ -105,7 +97,6 @@ body {
   border-color: var(--accent);
 }
 
-/* ==HERO CITY NAME== */
 .local-city-name h2 {
   font-size: 11px;
   font-weight: 700;
@@ -115,7 +106,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* ==HERO TIME== */
 .local-hero-time span {
   font-family: "Space Mono", monospace;
   font-size: 52px;
@@ -125,7 +115,6 @@ body {
   line-height: 1;
 }
 
-/* ==HERO DATE== */
 .local-hero-date span {
   font-family: "Space Mono", monospace;
   font-size: 13px;
@@ -134,7 +123,6 @@ body {
   display: block;
 }
 
-/* ==HERO BADGE== */
 .local-hero-badge span {
   display: inline-block;
   background: var(--bg-toggle);
@@ -149,7 +137,6 @@ body {
   margin-top: 10px;
 }
 
-/* ==CITY CARDS GRID== */
 .city-clock-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -157,7 +144,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* ==CITY CARD== */
 .city-clock-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -171,7 +157,6 @@ body {
   border-color: var(--accent);
 }
 
-/* ==CITY CARD NAME== */
 .city-clock-card h3 {
   font-size: 11px;
   font-weight: 700;
@@ -181,7 +166,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* ==CITY CARD TIME== */
 .city-card-time {
   font-family: "Space Mono", monospace;
   font-size: 28px;
@@ -191,7 +175,6 @@ body {
   line-height: 1;
 }
 
-/* ==CITY CARD GMT OFFSET== */
 .city-clock-card p {
   font-family: "Space Mono", monospace;
   font-size: 13px;
@@ -199,7 +182,6 @@ body {
   margin-top: 6px;
 }
 
-/* ==REMOVE CARD BUTTON== */
 .remove-card-btn {
   position: absolute;
   top: 10px;
@@ -217,12 +199,10 @@ body {
   color: var(--accent);
 }
 
-/* ==TIMEZONE SELECTOR== */
 .timezone {
   margin-top: 12px;
 }
 
-/* ==SEARCH CONTAINER== */
 .search-container {
   position: relative;
   margin-top: 12px;
@@ -273,7 +253,6 @@ body {
   color: var(--accent);
 }
 
-/* ==FOOTER== */
 .footer {
   width: 100%;
   padding: 20px 35px;
@@ -284,13 +263,11 @@ body {
   margin-top: auto;
 }
 
-/* ==FOOTER TEXT== */
 .footer p {
   font-size: 15px;
   color: var(--text-primary);
 }
 
-/* ==FOOTER ICONS== */
 .footer-links {
   display: flex;
   gap: 16px;
